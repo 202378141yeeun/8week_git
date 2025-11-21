@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Chat Demo</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="chat-container">
+        <h1>AI 챗봇 데모</h1>
+        <div id="chat-window">
+            <!-- 메시지들이 여기 쌓인다 -->
+        </div>
+        <form id="chat-form">
+            <input
+                type="text"
+                id="message-input"
+                placeholder="AI에게 말을 걸어보세요..."
+                autocomplete="off"
+                required
+            />
+            <button type="submit">전송</button>
+        </form>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
