@@ -3,7 +3,7 @@ from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
+from app.api import info
 from backend.app.api.routes import router as api_router
 from backend.app.config.settings import settings
 
@@ -11,7 +11,7 @@ from backend.app.config.settings import settings
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 app = FastAPI(title=settings.PROJECT_NAME)
-
+app.include_router(info.router)
 # 템플릿 & 정적 파일 설정
 templates = Jinja2Templates(directory=str(BASE_DIR / "frontend" / "templates"))
 app.mount(
